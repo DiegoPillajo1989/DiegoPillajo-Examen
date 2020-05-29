@@ -42,6 +42,7 @@ TextView tVdeportes;
         tVidioma.setText(idioma);
 
 
+
     }
 
 }
