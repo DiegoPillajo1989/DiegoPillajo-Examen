@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="Usuario">Ingrese su usuario</string>
+    <string name="Contraseña">Ingrese su contraseña</string>
+    <string name="Boton">Ingresar</string>
+    <string name="Bienvenida">Bienvenido al Sistema de Cursos</string>
+    <string name="logo">Logo</string>
+    <string name="Ingreso"> Usuario Conectado: </string>
+    <string name="nombre">Nombre </string>
+    <string name="monto">Monto</string>
+    <string name="pago">Pago </string>
+    <string name="total">Total a Pagar</string>
+    <string name="llena">Por Favor Completa la Encuesta</string>
+    <string name="couta">Couta </string>
+    <string name="guardar">Guardar</string>
+    <string name="calcular">Calcular</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="Pregunta1">¿Por qué eligió este centro?</string>
+    <string name="Pregunta2">¿Qué deportes practica?</string>
+    <string name="Pregunta3">Está interesado en aprender otro idioma aparte de inglés. </string>
+    <string name="si">SI </string>
+    <string name="no">NO </string>
+    <string name="futbol">Futbol </string>
+    <string name="basquet">Básquet</string>
+    <string name="artes">Artes Marciales</string>
+    <string name="enviar">Enviar Encuesta </string>
+    <string name="registro">Resumen del Registro </string>
+
+</resources>
