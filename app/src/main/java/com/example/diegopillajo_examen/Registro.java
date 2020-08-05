@@ -16,6 +16,8 @@ public class Registro extends AppCompatActivity {
     TextView cuota;
     EditText monto;
     TextView nombre;
+    TextView apellido;
+    TextView direccion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class Registro extends AppCompatActivity {
         //
 
     }
-    public void Calcular(View view) {
+  /*  public void Calcular(View view) {
         if (monto.getText().toString().equals(""))
         {
             Toast.makeText(this,"Monto Incorrecto", Toast.LENGTH_LONG).show();
@@ -47,23 +49,26 @@ public class Registro extends AppCompatActivity {
             coutas = pagos / 3;
             cuota.setText(Double.toString(coutas));
         }
-    }
+    }*/
     public void Guardar(View view) {
-        if (monto.getText().toString().equals("") || pago.getText().toString().equals("") || cuota.getText().toString().equals(""))
+       /* if (monto.getText().toString().equals("") || pago.getText().toString().equals("") || cuota.getText().toString().equals(""))
         {
             Toast.makeText(this,"Monto Incorrecto", Toast.LENGTH_LONG).show();
         }
         else
-        {
+        {*/
             Intent intentDatos = new Intent (Registro.this,Encuesta.class);
             intentDatos.putExtra("usuario",cajaRecibir.getText().toString());
             intentDatos.putExtra("nombre",nombre.getText().toString());
             intentDatos.putExtra("total",pago.getText().toString());
             startActivity(intentDatos);
             Toast.makeText(this,"Elemento Guardado con Éxito", Toast.LENGTH_LONG).show();
-        }
+        /*}*/
     }
     public void Limpiar(View view) {
+        nombre.setText("");
+        apellido.setText("");
+
         pago.setText("");
         monto.setText("");
         cuota.setText("");
