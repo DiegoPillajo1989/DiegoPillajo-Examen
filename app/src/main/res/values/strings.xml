@@ -7,7 +7,7 @@
     <string name="logo">Logo</string>
     <string name="Ingreso"> Usuario Conectado: </string>
     <string name="nombre">Nombre </string>
-    <string name="monto">Monto</string>
+    <string name="monto">Importe Cobrado</string>
     <string name="pago">Pago </string>
     <string name="total">Total a Pagar</string>
     <string name="llena">Por Favor Completa la Encuesta</string>
@@ -25,5 +25,6 @@
     <string name="artes">Artes Marciales</string>
     <string name="enviar">Enviar Encuesta </string>
     <string name="registro">Resumen del Registro </string>
-
+    <string name="apelldio">Apellido </string>
+    <string name="direccion">DIrección </string>
 </resources>

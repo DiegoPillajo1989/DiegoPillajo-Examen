@@ -70,7 +70,7 @@
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="333dp"
-                android:layout_height="271dp"
+                android:layout_height="413dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginLeft="30dp"
                 android:orientation="vertical">
@@ -93,6 +93,41 @@
                     android:inputType="textPersonName" />
 
                 <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/apelldio"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/eTApellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/apelldio"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/direccion"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/eTDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/direccion"
+                    android:inputType="textPersonName" />
+
+
+                <TextView
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -109,10 +144,11 @@
                     android:hint="0"
                     android:inputType="number" />
 
+
                 <TextView
                     android:id="@+id/textView12"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:text="@string/pago"
                     android:textSize="20sp" />
@@ -121,8 +157,10 @@
                     android:id="@+id/tVPago"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed-medium"
-                    android:textSize="20sp" />
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="0"
+                    android:inputType="number"  />
 
                 <TextView
                     android:id="@+id/textView13"
@@ -132,12 +170,14 @@
                     android:text="@string/couta"
                     android:textSize="20sp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/tVCouta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed-medium"
-                    android:textSize="20sp" />
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="0"
+                    android:inputType="number"  />
 
             </LinearLayout>
 

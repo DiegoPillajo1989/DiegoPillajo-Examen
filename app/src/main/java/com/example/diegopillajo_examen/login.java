@@ -21,7 +21,7 @@ public class login extends AppCompatActivity {
     }
     public void Enviar (View V)
     {
-        if (loginusuario.getText().toString().equals("estudiante2020")  && clave.getText().toString().equals("uisrael2020" ))
+        if (loginusuario.getText().toString().equals("1")  && clave.getText().toString().equals("2" ))
         {
             //Enviar
             Intent intentEnviar = new Intent (login.this,Registro.class);
