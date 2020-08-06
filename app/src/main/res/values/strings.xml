@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Login</string>
-    <string name="Usuario">Ingrese su usuario</string>
-    <string name="Contraseña">Ingrese su contraseña</string>
+    <string name="Usuario">Ingresa tu Usuario</string>
+    <string name="Contraseña">Ingresa tu contraseña</string>
     <string name="Boton">Ingresar</string>
-    <string name="Bienvenida">Bienvenido al Sistema de Cursos</string>
+    <string name="Bienvenida">Bienvenido, Tu opinion es importante para nosotros</string>
     <string name="logo">Logo</string>
     <string name="Ingreso"> Usuario Conectado: </string>
     <string name="nombre">Nombre </string>

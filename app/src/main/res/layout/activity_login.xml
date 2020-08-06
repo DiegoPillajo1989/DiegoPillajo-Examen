@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:background="#FAFAFA"
             android:contentDescription="@string/logo"
-            app:srcCompat="@mipmap/download" />
+            app:srcCompat="@mipmap/logo" />
 
     </LinearLayout>
 
