@@ -150,7 +150,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/telefono"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -166,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:autofillHints=""
                     android:ems="10"
-                    android:hint="0"
+                    android:hint="@string/_0"
                     android:inputType="number" />
 
             </LinearLayout>
@@ -207,12 +208,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+
                 <Button
                     android:id="@+id/capturar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/capturar"
-                    />
+                    android:onClick="tomarfoto"
+                    android:text="@string/capturar" />
             </LinearLayout>
 
             <LinearLayout
