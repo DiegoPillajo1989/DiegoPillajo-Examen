@@ -14,7 +14,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +32,8 @@ public class Registro extends AppCompatActivity {
     TextView direccion;
     TextView telefono;
     TextView pago;
-    private ImageView img;
+    ImageView img;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +46,10 @@ public class Registro extends AppCompatActivity {
         pago = findViewById(R.id.eTPago);
         //Recibo el usuario
         loginusuario = getIntent().getExtras();
+
         String datoRecibido = loginusuario.getString("datoEnviado");
         cajaRecibir.setText(datoRecibido);
-        img = (ImageView)findViewById(R.id.imageView);
+        img = findViewById(R.id.iWFoto);
         if (ContextCompat.checkSelfPermission(Registro.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Registro.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Registro.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1000);
         }
@@ -55,23 +57,16 @@ public class Registro extends AppCompatActivity {
 
     String currentPhotoPath;
     private File createImageFile() throws IOException {
-        // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
+        String imageFileName = "Backup_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
-        // Save a file: path for use with ACTION_VIEW intents
+        File image = File.createTempFile(imageFileName, ".jpg",storageDir);
         currentPhotoPath = image.getAbsolutePath();
         return image;
     }
 
     static final int REQUEST_TAKE_PHOTO = 1;
-
-    public void tomarfoto(View view) {
+    public void tomarFoto(View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -84,9 +79,7 @@ public class Registro extends AppCompatActivity {
             }
             // Continue only if the File was successfully created
             if (photoFile != null) {
-                Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.example.android.fileprovider",
-                        photoFile);
+                Uri photoURI = FileProvider.getUriForFile(this,"com.example.android.fileprovider", photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
@@ -102,8 +95,6 @@ public class Registro extends AppCompatActivity {
             img.setImageBitmap(imageBitmap);
         }
     }
-
-
 
     public void Guardar(View view) {
             Intent intentDatos = new Intent (Registro.this,Encuesta.class);
