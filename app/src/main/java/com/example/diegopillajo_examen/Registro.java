@@ -32,7 +32,7 @@ public class Registro extends AppCompatActivity {
     TextView direccion;
     TextView telefono;
     TextView pago;
-    ImageView img;
+    private ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class Registro extends AppCompatActivity {
 
         String datoRecibido = loginusuario.getString("datoEnviado");
         cajaRecibir.setText(datoRecibido);
-        img = findViewById(R.id.iWFoto);
+        img =(ImageView)findViewById(R.id.iWFoto);
         if (ContextCompat.checkSelfPermission(Registro.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Registro.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Registro.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1000);
         }
@@ -68,16 +68,12 @@ public class Registro extends AppCompatActivity {
     static final int REQUEST_TAKE_PHOTO = 1;
     public void tomarFoto(View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            // Create the File where the photo should go
             File photoFile = null;
             try {
                 photoFile = createImageFile();
             } catch (IOException ex) {
-                // Error occurred while creating the File
             }
-            // Continue only if the File was successfully created
             if (photoFile != null) {
                 Uri photoURI = FileProvider.getUriForFile(this,"com.example.android.fileprovider", photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
