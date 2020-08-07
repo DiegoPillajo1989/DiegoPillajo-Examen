@@ -49,7 +49,7 @@ public class Registro extends AppCompatActivity {
 
         String datoRecibido = loginusuario.getString("datoEnviado");
         cajaRecibir.setText(datoRecibido);
-        img =(ImageView)findViewById(R.id.iWFoto);
+        img =findViewById(R.id.iWFoto);
         if (ContextCompat.checkSelfPermission(Registro.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Registro.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Registro.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1000);
         }
@@ -72,11 +72,13 @@ public class Registro extends AppCompatActivity {
             File photoFile = null;
             try {
                 photoFile = createImageFile();
-            } catch (IOException ex) {
+            } catch (IOException ex)
+            {
+                Toast.makeText(this,"Imagen no Capturada", Toast.LENGTH_LONG).show();
             }
             if (photoFile != null) {
                 Uri photoURI = FileProvider.getUriForFile(this,"com.example.android.fileprovider", photoFile);
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI.toString());
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
         }
@@ -87,6 +89,7 @@ public class Registro extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
+            assert extras != null;
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             img.setImageBitmap(imageBitmap);
         }
