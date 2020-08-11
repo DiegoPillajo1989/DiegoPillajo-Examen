@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "796994906496",
+    "firebase_url": "https://encuesta-cc70a.firebaseio.com",
+    "project_id": "encuesta-cc70a",
+    "storage_bucket": "encuesta-cc70a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796994906496:android:31e89b7adadb879b5d3965",
+        "android_client_info": {
+          "package_name": "com.example.diegopillajo_examen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796994906496-lfsurvu2cjo9dgv6fljjnakm1mp91t72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJKxTNKlNeXrWubv_QipZa70BWMxZeZwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796994906496-lfsurvu2cjo9dgv6fljjnakm1mp91t72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

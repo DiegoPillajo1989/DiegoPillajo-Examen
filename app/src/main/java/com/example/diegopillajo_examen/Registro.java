@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -16,13 +17,19 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 public class Registro extends AppCompatActivity {
     TextView cajaRecibir;
@@ -33,6 +40,10 @@ public class Registro extends AppCompatActivity {
     TextView telefono;
     TextView pago;
     private ImageView img;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    LinearLayout ln;
+    usuario usuarioselect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +57,50 @@ public class Registro extends AppCompatActivity {
         pago = findViewById(R.id.eTPago);
         //Recibo el usuario
         loginusuario = getIntent().getExtras();
-
         String datoRecibido = loginusuario.getString("datoEnviado");
         cajaRecibir.setText(datoRecibido);
+        iniciarfireBase();
         img =findViewById(R.id.iWFoto);
         if (ContextCompat.checkSelfPermission(Registro.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Registro.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Registro.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1000);
         }
     }
+    private void iniciarfireBase()
+    {
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase.setPersistenceEnabled(true);
+        databaseReference=firebaseDatabase.getReference();
+    }
+  /*  private void registrar (){
+        android.app.AlertDialog.Builder builder= new android.app.AlertDialog.Builder(Registro.this);
+        View view=getLayoutInflater().inflate(R.layout.activity_registro, null);
+        Button guardar = (Button)view.findViewById(R.id.button3);
+        builder.setView(view);
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                String nombr = nombre.getText().toString();
+                String apellid =apellido.getText().toString();
+                String direccio = direccion.getText().toString();
+                String telefon = telefono.getText().toString();
+                String pag = pago.getText().toString();
+                usuario p =  new usuario();
+                p.setCod(UUID.randomUUID().toString());
+                p.setNombre(nombr);
+                p.setApellido(apellid);
+                p.setDireccion(direccio);
+                p.setTelefono(telefon);
+                p.setTotal(pag);
+                databaseReference.child("Usuarios").child(p.getCod()).setValue(p);
+                dialog.dismiss();
+            }
+        });
+    }*/
+
+
 
     String currentPhotoPath;
     private File createImageFile() throws IOException {
@@ -96,15 +143,25 @@ public class Registro extends AppCompatActivity {
     }
 
     public void Guardar(View view) {
-            Intent intentDatos = new Intent (Registro.this,Encuesta.class);
-            intentDatos.putExtra("usuario",cajaRecibir.getText().toString());
-            intentDatos.putExtra("nombre",nombre.getText().toString());
-            intentDatos.putExtra("apellido",apellido.getText().toString());
-            intentDatos.putExtra("direccion",direccion.getText().toString());
-            intentDatos.putExtra("telefono",telefono.getText().toString());
-            intentDatos.putExtra("total",pago.getText().toString());
-            startActivity(intentDatos);
-            Toast.makeText(this,"Elemento Guardado con Éxito", Toast.LENGTH_LONG).show();
+        String nombr = nombre.getText().toString();
+        String apellid =apellido.getText().toString();
+        String direccio = direccion.getText().toString();
+        String telefon = telefono.getText().toString();
+        String pag = pago.getText().toString();
+        usuario p =  new usuario();
+        p.setCod(UUID.randomUUID().toString());
+        p.setNombre(nombr);
+        p.setApellido(apellid);
+        p.setDireccion(direccio);
+        p.setTelefono(telefon);
+        p.setTotal(pag);
+        databaseReference.child("Usuarios").child(p.getCod()).setValue(p);
+        Toast.makeText(this,"Elemento Guardado con Éxito", Toast.LENGTH_LONG).show();
+        //Paso de Intent
+        Intent intentEnviar = new Intent (Registro.this,Encuesta.class);
+        intentEnviar.putExtra("datoEnviado",nombre.getText().toString());
+        startActivity(intentEnviar);
+
     }
     public void Limpiar(View view) {
         nombre.setText("");
