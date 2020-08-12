@@ -16,8 +16,8 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        loginusuario = findViewById(R.id.etUs);
-        clave = findViewById(R.id.etpass);
+        loginusuario = findViewById(R.id.etCorreo);
+        clave = findViewById(R.id.etPass);
     }
     public void Enviar (View V)
     {
@@ -28,7 +28,6 @@ public class login extends AppCompatActivity {
             intentEnviar.putExtra("datoEnviado",loginusuario.getText().toString());
             startActivity(intentEnviar);
             Toast.makeText(this,"Login Aceptado", Toast.LENGTH_LONG).show();
-
         }
         else
         {

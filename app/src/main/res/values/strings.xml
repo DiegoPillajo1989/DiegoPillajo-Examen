@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Compartenos tu opinión</string>
-    <string name="Usuario">Ingresa tu Usuario</string>
+    <string name="Usuario">Ingresa tu Correo</string>
     <string name="Contraseña">Ingresa tu contraseña</string>
     <string name="Boton">Ingresar</string>
-    <string name="Bienvenida">Bienvenido, Tu opinion es importante para nosotros</string>
+    <string name="Bienvenida">Bienvenid@</string>
     <string name="logo">Logo</string>
     <string name="Ingreso"> Usuario Conectado: </string>
     <string name="nombre">Nombre </string>
@@ -30,4 +30,5 @@
     <string name="telefono">Celular o Teléfono </string>
     <string name="capturar">Tomar Foto</string>
     <string name="_0">0</string>
+    <string name="btnRegistro">¿Aun no eres usuario?</string>
 </resources>

@@ -80,7 +80,7 @@
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="333dp"
-                android:layout_height="375dp"
+                android:layout_height="425dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginLeft="30dp"
                 android:orientation="vertical">
@@ -168,7 +168,8 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:hint="@string/_0"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:importantForAutofill="no"/>
 
             </LinearLayout>
 

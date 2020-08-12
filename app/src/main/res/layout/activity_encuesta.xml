@@ -61,7 +61,7 @@
 
                 <TextView
                     android:id="@+id/textView5"
-                    android:layout_width="143dp"
+                    android:layout_width="166dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
                     android:text="@string/Ingreso"
@@ -78,7 +78,7 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
-                android:layout_width="350dp"
+                android:layout_width="303dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
@@ -95,6 +95,7 @@
                     android:fontFamily="sans-serif-condensed-medium"
                     android:textColor="#FFFFFF"
                     android:textSize="12sp" />
+
                 <TextView
                     android:id="@+id/tVmonto"
                     android:layout_width="match_parent"
@@ -105,7 +106,7 @@
 
                 <TextView
                     android:id="@+id/tVEncuesta"
-                    android:layout_width="match_parent"
+                    android:layout_width="269dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="sans-serif-condensed-medium"
@@ -127,9 +128,9 @@
                     android:id="@+id/eTInfo"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:textSize="18sp"
+                    android:autofillHints=""
                     android:inputType="textPersonName"
-                    android:autofillHints="" />
+                    android:textSize="18sp" />
 
 
             </LinearLayout>

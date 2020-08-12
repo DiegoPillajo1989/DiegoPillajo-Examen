@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "796994906496-01msj95sqo0p2vcmbvq5ut2gpq2u1guc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.diegopillajo_examen",
+            "certificate_hash": "e3e2b8958fbb35ffc262cabf8fa7bad2bb03833e"
+          }
+        },
+        {
           "client_id": "796994906496-lfsurvu2cjo9dgv6fljjnakm1mp91t72.apps.googleusercontent.com",
           "client_type": 3
         }

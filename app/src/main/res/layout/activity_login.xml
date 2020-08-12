@@ -29,99 +29,109 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:layout_marginTop="0dp"
-        android:background="#2196F3"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/imageView4"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FAFAFA"
-            android:contentDescription="@string/logo"
-            app:srcCompat="@mipmap/logo" />
+            android:layout_height="185dp"
+            android:layout_marginTop="0dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/logo"
+                app:srcCompat="@mipmap/logo" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="360dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="18dp"
-        android:gravity="start|center_vertical"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="257dp"
-            android:layout_height="42dp"
-            android:text="@string/Bienvenida" />
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="360dp"
+            android:layout_height="33dp"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="18dp"
+            android:gravity="start|center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="257dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Bienvenida" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="373dp"
-        android:layout_height="235dp"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:gravity="center|start"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Usuario" />
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="365dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-        <EditText
-            android:id="@+id/etUs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/Usuario"
-            android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="224dp"
+                android:layout_height="33dp"
+                android:text="@string/Usuario" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Contraseña" />
+            <EditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/Usuario"
+                android:inputType="text|textEmailAddress" />
 
-        <EditText
-            android:id="@+id/etpass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/Contraseña"
-            android:inputType="textPassword" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="222dp"
+                android:layout_height="34dp"
+                android:text="@string/Contraseña" />
 
-        <Button
-            android:id="@+id/button"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:onClick="Enviar"
-            android:text="@string/Boton"
-            android:textColorHighlight="#2297F4"
-            android:textColorHint="#FFFFFF"
-            android:textColorLink="#03A9F4" />
-    </LinearLayout>
+            <EditText
+                android:id="@+id/etPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/Contraseña"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:onClick="Enviar"
+                android:text="@string/Boton"
+                android:textColorHighlight="#2297F4"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#03A9F4" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:text="@string/btnRegistro"
+                android:textColorHighlight="#2297F4"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#03A9F4" />
+        </LinearLayout>
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
