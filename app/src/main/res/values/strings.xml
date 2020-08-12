@@ -42,6 +42,7 @@
     <string name="tipo">Tipo</string>
     <string name="tipoejm">Pc, Laptop, Impresora</string>
     <string name="descripcion">Descripción</string>
-
-
+    <string name="titulo">Alerta</string>
+    <string name="Mensaje">¿Deseas Salir?</string>
+    <string name="Salir">Salir</string>
 </resources>

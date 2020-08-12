@@ -32,8 +32,6 @@ import java.util.Date;
 import java.util.UUID;
 
 public class Registro extends AppCompatActivity {
-    TextView cajaRecibir;
-    Bundle loginusuario;
     TextView nombre;
     TextView apellido;
     TextView direccion;
@@ -41,8 +39,6 @@ public class Registro extends AppCompatActivity {
     private ImageView img;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    LinearLayout ln;
-    usuario usuarioselect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

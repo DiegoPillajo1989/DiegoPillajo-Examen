@@ -136,7 +136,6 @@
                     android:layout_height="match_parent"
                     android:ems="10"
                     android:gravity="start|top"
-                    android:text="@string/descripcion"
                     android:inputType="textMultiLine" />
 
 
@@ -157,6 +156,7 @@
                     android:layout_width="80dp"
                     android:layout_height="47dp"
 
+                    android:onClick="Guardar"
                     android:text="@string/guardar" />
 
                 <Button
