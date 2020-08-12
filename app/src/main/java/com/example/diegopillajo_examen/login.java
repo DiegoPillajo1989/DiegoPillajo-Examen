@@ -21,10 +21,10 @@ public class login extends AppCompatActivity {
     }
     public void Enviar (View V)
     {
-        if (loginusuario.getText().toString().equals("1")  && clave.getText().toString().equals("2" ))
+        if (loginusuario.getText().toString().equals("Diego")  && clave.getText().toString().equals("diego1" ))
         {
             //Enviar
-            Intent intentEnviar = new Intent (login.this,Registro.class);
+            Intent intentEnviar = new Intent (login.this,inicio.class);
             intentEnviar.putExtra("datoEnviado",loginusuario.getText().toString());
             startActivity(intentEnviar);
             Toast.makeText(this,"Login Aceptado", Toast.LENGTH_LONG).show();
@@ -37,4 +37,10 @@ public class login extends AppCompatActivity {
 
     }
 
+    public void Registrar (View V)
+    {
+            //Registrar
+            Intent intentRegistro = new Intent (login.this,Registro.class);
+            startActivity(intentRegistro);
+    }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".inicio">
+    tools:context=".agenda">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -60,66 +60,114 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="333dp"
-                android:layout_height="115dp"
+                android:layout_height="380dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginLeft="30dp"
                 android:orientation="vertical">
 
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:text="@string/slogan"
-                    android:textSize="20sp" />
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:text="@string/slogan2"
-                    android:textSize="20sp" />
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:text="@string/slogan3"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/modelo"
                     android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/etModelo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/modelo"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/marca"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/eTMarca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/marca"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/tipo"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/eTTipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/tipoejm"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/descripcion"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/eTDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:text="@string/descripcion"
+                    android:inputType="textMultiLine" />
+
+
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout4"
-                android:layout_width="332dp"
-                android:layout_height="100dp"
-                android:layout_gravity="left"
+                android:layout_width="277dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:layout_marginStart="30dp"
                 android:layout_marginLeft="30dp"
-                android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
 
                 <Button
                     android:id="@+id/button3"
                     style="@android:style/Widget.Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:onClick="encuesta"
-                    android:text="@string/btnencuesta" />
+                    android:layout_width="80dp"
+                    android:layout_height="47dp"
+
+                    android:text="@string/guardar" />
 
                 <Button
                     android:id="@+id/button4"
                     style="@android:style/Widget.Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:onClick="agendar"
-                    android:text="@string/btnreservas" />
+                    android:layout_width="80dp"
+                    android:layout_height="47dp"
+
+                    android:text="@string/limpiar" />
             </LinearLayout>
+
 
         </LinearLayout>
 

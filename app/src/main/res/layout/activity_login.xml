@@ -127,6 +127,7 @@
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
+                android:onClick="Registrar"
                 android:text="@string/btnRegistro"
                 android:textColorHighlight="#2297F4"
                 android:textColorHint="#FFFFFF"

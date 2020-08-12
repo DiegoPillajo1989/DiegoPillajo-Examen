@@ -22,14 +22,11 @@ TextView tVdeportes;
     private void recibirDatos ()
     {
         Bundle extras = getIntent().getExtras();
-        String Usuario = extras.getString("usuario");
         String Nombre = extras.getString("nombre");
         String total = extras.getString("total");
         String info = extras.getString("info");
         String deporte = extras.getString("deportes");
         String idioma = extras.getString("idioma");
-        tvBienvenido=(TextView) findViewById(R.id.tvBienvenido);
-        tvBienvenido.setText(Usuario);
         tvnombre=(TextView) findViewById(R.id.tVnombre);
         tvnombre.setText(Nombre);
         tvmonto=(TextView) findViewById(R.id.tVmonto);

@@ -50,20 +50,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="143dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:text="@string/Ingreso"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/tvBienvenido"
-                    android:layout_width="105dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="14sp" />
 
             </LinearLayout>
 

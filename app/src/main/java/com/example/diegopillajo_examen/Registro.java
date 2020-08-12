@@ -38,7 +38,6 @@ public class Registro extends AppCompatActivity {
     TextView apellido;
     TextView direccion;
     TextView telefono;
-    TextView pago;
     private ImageView img;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -49,16 +48,10 @@ public class Registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-        cajaRecibir=findViewById(R.id.tvBienvenido);
         nombre = findViewById(R.id.eTNombre);
         apellido = findViewById(R.id.eTApellido);
         direccion = findViewById(R.id.eTDireccion);
         telefono = findViewById(R.id.eTTelefono);
-        pago = findViewById(R.id.eTPago);
-        //Recibo el usuario
-        loginusuario = getIntent().getExtras();
-        String datoRecibido = loginusuario.getString("datoEnviado");
-        cajaRecibir.setText(datoRecibido);
         iniciarfireBase();
         img =findViewById(R.id.iWFoto);
         if (ContextCompat.checkSelfPermission(Registro.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Registro.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -147,20 +140,17 @@ public class Registro extends AppCompatActivity {
         String apellid =apellido.getText().toString();
         String direccio = direccion.getText().toString();
         String telefon = telefono.getText().toString();
-        String pag = pago.getText().toString();
         usuario p =  new usuario();
         p.setCod(UUID.randomUUID().toString());
         p.setNombre(nombr);
         p.setApellido(apellid);
         p.setDireccion(direccio);
         p.setTelefono(telefon);
-        p.setTotal(pag);
         databaseReference.child("Usuarios").child(p.getCod()).setValue(p);
         Toast.makeText(this,"Elemento Guardado con Éxito", Toast.LENGTH_LONG).show();
         //Paso de Intent
-        Intent intentEnviar = new Intent (Registro.this,Encuesta.class);
-        intentEnviar.putExtra("datoEnviado",nombre.getText().toString());
-        startActivity(intentEnviar);
+        Intent intentinicio = new Intent (Registro.this,inicio.class);
+        startActivity(intentinicio);
 
     }
     public void Limpiar(View view) {
@@ -168,8 +158,6 @@ public class Registro extends AppCompatActivity {
         apellido.setText("");
         direccion.setText("");
         telefono.setText("");
-        pago.setText("");
-
     }
 
 }

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Compartenos tu opinión</string>
-    <string name="Usuario">Ingresa tu Correo</string>
+    <string name="Usuario">Ingresa tu nombre</string>
     <string name="Contraseña">Ingresa tu contraseña</string>
     <string name="Boton">Ingresar</string>
     <string name="Bienvenida">Bienvenid@</string>
@@ -15,14 +15,14 @@
     <string name="guardar">Guardar</string>
     <string name="calcular">Calcular</string>
     <string name="limpiar">Limpiar</string>
-    <string name="Pregunta1">¿Por qué eligió este centro?</string>
-    <string name="Pregunta2">¿Qué deportes practica?</string>
-    <string name="Pregunta3">Está interesado en aprender otro idioma aparte de inglés. </string>
+    <string name="Pregunta1">¿Por qué nos Eligío?</string>
+    <string name="Pregunta2">¿Cómo se enteró de nosotros?</string>
+    <string name="Pregunta3">¿Esta conforme con la solución brindada? </string>
     <string name="si">SI </string>
     <string name="no">NO </string>
-    <string name="futbol">Futbol </string>
-    <string name="basquet">Básquet</string>
-    <string name="artes">Artes Marciales</string>
+    <string name="amigos">Por un amigo </string>
+    <string name="facebook">Facebook</string>
+    <string name="otro">Otro medio</string>
     <string name="enviar">Enviar Encuesta </string>
     <string name="registro">Resumen del Registro </string>
     <string name="apelldio">Apellido </string>
@@ -31,4 +31,17 @@
     <string name="capturar">Tomar Foto</string>
     <string name="_0">0</string>
     <string name="btnRegistro">¿Aun no eres usuario?</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="slogan">Bienvenid@ a LeoSystems </string>
+    <string name="slogan2">Gracias por confiar en nosotros. </string>
+    <string name="slogan3">¿Cómo podemos ayudarte?</string>
+    <string name="btnencuesta">Calificanos</string>
+    <string name="btnreservas">Asistencia</string>
+    <string name="marca">Marca</string>
+    <string name="modelo">Modelo</string>
+    <string name="tipo">Tipo</string>
+    <string name="tipoejm">Pc, Laptop, Impresora</string>
+    <string name="descripcion">Descripción</string>
+
+
 </resources>

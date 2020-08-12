@@ -12,6 +12,12 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
+
 public class Encuesta extends AppCompatActivity {
     TextView tvBienvenido;
     TextView tvnombre;
@@ -22,11 +28,12 @@ public class Encuesta extends AppCompatActivity {
     RadioButton rBSi,rBNo;
     CheckBox cBFutbol, cBBasquet, cBArtes;
     Button btn_selecionar;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encuesta);
-        recibirDatos ();
         eTInfo = findViewById(R.id.eTInfo);
         btn_selecionar = (Button)findViewById(R.id.btnEnviar);
         rBSi = (RadioButton)findViewById(R.id.rbSi);
@@ -36,19 +43,14 @@ public class Encuesta extends AppCompatActivity {
         cBArtes  = (CheckBox) findViewById(R.id.cbArtes);
         tVSeleccionadoc = (TextView) findViewById(R.id.ResChek);
         tVSeleccionador = (TextView) findViewById(R.id.ResRadio);
+        iniciarfireBase();
     }
-    private void recibirDatos ()
+    private void iniciarfireBase()
     {
-        Bundle extras = getIntent().getExtras();
-        String Usuario = extras.getString("usuario");
-        String Nombre = extras.getString("nombre");
-        String total = extras.getString("total");
-        tvBienvenido = (TextView) findViewById(R.id.tvBienvenido);
-        tvBienvenido.setText(Usuario);
-        tvnombre=(TextView) findViewById(R.id.tVnombre);
-        tvnombre.setText(Nombre);
-        tvmonto=(TextView) findViewById(R.id.tVmonto);
-        tvmonto.setText(total);
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase.setPersistenceEnabled(true);
+        databaseReference=firebaseDatabase.getReference();
     }
 
     public void Enviar(View view) {
@@ -63,27 +65,38 @@ public class Encuesta extends AppCompatActivity {
 
             if (cBFutbol.isChecked())
             {
-               cad+="Futbol ";
+               cad+="Un amigo ";
             }
             if (cBBasquet.isChecked())
             {
-                cad+="Básquet ";
+                cad+="Facebook ";
             }
             if (cBArtes.isChecked())
             {
-                cad+="Artes ";
+                cad+="Otros ";
             }
             tVSeleccionadoc.setText(cad);
 
-            Intent intentDatos = new Intent (Encuesta.this,Resumen.class);
-            intentDatos.putExtra("usuario",tvBienvenido.getText().toString());
-            intentDatos.putExtra("nombre",tvnombre.getText().toString());
-            intentDatos.putExtra("total",tvmonto.getText().toString());
-            intentDatos.putExtra("info",eTInfo.getText().toString());
-            intentDatos.putExtra("deportes",cad);
-            intentDatos.putExtra("idioma",tVSeleccionador.getText().toString());
-            Toast.makeText(getApplicationContext(),cad,Toast.LENGTH_SHORT).show();
-            startActivity(intentDatos);
-            //Toast.makeText(this,"Encuesta llenada con con Éxito", Toast.LENGTH_LONG).show();
+            String info = eTInfo.getText().toString();
+            String medio =cad;
+            String satisfaccion =tVSeleccionador.getText().toString();
+            encuestaDat e =  new encuestaDat();
+            e.setCod(UUID.randomUUID().toString());
+            e.setInformacion(info);
+            e.setMediop(cad);
+            e.setSatisfaccionf(satisfaccion);
+            databaseReference.child("Encuesta").child(e.getCod()).setValue(e);
+            Toast.makeText(this,"Gracias por Calificarnos", Toast.LENGTH_LONG).show();
+            //Paso de Intent
+            Intent intentinicio = new Intent (Encuesta.this,inicio.class);
+            startActivity(intentinicio);
+
+
+
+
+
+
+
     }
+
 }
